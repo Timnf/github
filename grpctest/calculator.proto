@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package calculator;
+
+// 定义计算器服务
+service Calculator {
+  // 简单RPC：加法
+  rpc Add (AddRequest) returns (AddResponse) {}
+  
+  // 服务器流式RPC：获取一个数的所有约数
+  rpc GetDivisors (NumberRequest) returns (stream NumberResponse) {}
+  
+  // 客户端流式RPC：累加所有数字
+  rpc SumAll (stream NumberRequest) returns (NumberResponse) {}
+  
+  // 双向流式RPC：计算多个数字的平方
+  rpc SquareNumbers (stream NumberRequest) returns (stream NumberResponse) {}
+}
+
+// 请求和响应消息定义
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message AddResponse {
+  int32 result = 1;
+}
+
+message NumberRequest {
+  int32 value = 1;
+}
+
+message NumberResponse {
+  int32 result = 1;
+}

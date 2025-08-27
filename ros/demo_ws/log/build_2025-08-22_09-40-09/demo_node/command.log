@@ -1,0 +1,6 @@
+Invoking command in '/home/nifei/project/github/ros/demo_ws/build/demo_node': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/nifei/project/github/ros/demo_ws/src/demo_node -DCMAKE_INSTALL_PREFIX=/home/nifei/project/github/ros/demo_ws/install/demo_node
+Invoked command in '/home/nifei/project/github/ros/demo_ws/build/demo_node' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/nifei/project/github/ros/demo_ws/src/demo_node -DCMAKE_INSTALL_PREFIX=/home/nifei/project/github/ros/demo_ws/install/demo_node
+Invoking command in '/home/nifei/project/github/ros/demo_ws/build/demo_node': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nifei/project/github/ros/demo_ws/build/demo_node -- -j4 -l4
+Invoked command in '/home/nifei/project/github/ros/demo_ws/build/demo_node' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nifei/project/github/ros/demo_ws/build/demo_node -- -j4 -l4
+Invoking command in '/home/nifei/project/github/ros/demo_ws/build/demo_node': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nifei/project/github/ros/demo_ws/build/demo_node
+Invoked command in '/home/nifei/project/github/ros/demo_ws/build/demo_node' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nifei/project/github/ros/demo_ws/build/demo_node

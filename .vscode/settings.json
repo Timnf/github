@@ -1,0 +1,7 @@
+{
+    "CodeFree.index": true,
+    "cmake.sourceDirectory": "/home/nifei/project/github/grpctest",
+    "files.associations": {
+        "chrono": "cpp"
+    }
+}
