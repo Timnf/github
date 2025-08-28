@@ -1,15 +1,43 @@
 {
-    "CodeFree.index": true,
-    "cmake.sourceDirectory": "/home/nifei/project/github/ros/topic_ws/src/service_cpp",
-    "files.associations": {
-        "chrono": "cpp",
-        "system_error": "cpp",
-        "array": "cpp",
-        "memory": "cpp",
-        "future": "cpp",
-        "istream": "cpp",
-        "functional": "cpp",
-        "tuple": "cpp",
-        "utility": "cpp"
-    }
+  "CodeFree.index": true,
+  "cmake.sourceDirectory": "/home/nifei/project/github/ros/topic_ws/src/service_cpp",
+  // CMake Tools 配置
+  "cmake.environment": {
+    // 加载 ROS 2 系统环境（替换为你的 ROS 2 版本）
+    "ROS_DISTRO": "humble",
+    // 工作空间安装路径（确保与实际路径一致）
+    "CMAKE_PREFIX_PATH": "${workspaceFolder}/ros/topic_ws/install:${env:CMAKE_PREFIX_PATH}",
+    // 动态链接库路径（关键：添加接口库和服务库的路径）
+    "LD_LIBRARY_PATH": "${workspaceFolder}/ros/topic_ws/install/service_cpp/lib:${workspaceFolder}/ros/topic_ws/install/custom_srv_interfaces/lib:${env:LD_LIBRARY_PATH}",
+    // ROS 域 ID
+    "ROS_DOMAIN_ID": "0"
+  },
+  // CMake 构建目录（默认与 colcon 一致）
+  "cmake.buildDirectory": "${workspaceFolder}/ros/topic_ws/build",
+  // 构建时的参数（只构建需要的包，加速编译）
+  // "cmake.buildArgs": [
+  //   "--packages-select",
+  //   "service_cpp",
+  //   "custom_srv_interfaces"
+  // ],
+  // 启动目标（设置为你的节点可执行文件）
+  "cmake.debugConfig": {
+    // "target": "move_robot_server", // 与 CMakeLists.txt 中 add_executable 的名称一致
+    "cwd": "${workspaceFolder}/ros/topic_ws" // 运行目录
+  },
+  // 自动加载 CMake 配置
+  "cmake.autoReloadOnSave": true,
+  // 构建类型（调试模式，确保生成调试符号）
+  "cmake.buildType": "Debug",
+  "files.associations": {
+    "chrono": "cpp",
+    "system_error": "cpp",
+    "array": "cpp",
+    "memory": "cpp",
+    "future": "cpp",
+    "istream": "cpp",
+    "functional": "cpp",
+    "tuple": "cpp",
+    "utility": "cpp"
+  }
 }
