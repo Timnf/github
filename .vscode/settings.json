@@ -1,7 +1,15 @@
 {
     "CodeFree.index": true,
-    "cmake.sourceDirectory": "/home/nifei/project/github/grpctest",
+    "cmake.sourceDirectory": "/home/nifei/project/github/ros/topic_ws/src/service_cpp",
     "files.associations": {
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "system_error": "cpp",
+        "array": "cpp",
+        "memory": "cpp",
+        "future": "cpp",
+        "istream": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
     }
 }
