@@ -49,6 +49,7 @@ public:
     void response_callback(rclcpp::Client<MoveRobot>::SharedFuture future)
     {
         // 获取服务端响应
+        RCLCPP_INFO(this->get_logger(), "收到服务端响应");
         auto response = future.get();
         RCLCPP_INFO(this->get_logger(), "服务端响应：移动后位置=%.2f", response->pose);
     }

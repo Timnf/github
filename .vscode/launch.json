@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug move_robot_server",  // 调试配置名称
+      "type": "cppdbg",                   // 调试类型（C++）
+      "request": "launch",                // 启动模式
+      // 可执行文件路径：根据实际编译路径修改
+      "program": "${workspaceFolder}/ros/topic_ws/build/service_cpp/move_robot_server",
+      "args": [],                         // 传递给节点的参数（无则留空）
+      "stopAtEntry": false,               // 是否在入口处暂停（false 不暂停）
+      "cwd": "${workspaceFolder}/ros/topic_ws",        // 工作目录（项目根目录）
+      // 关键：加载 ROS 2 环境变量
+      "environment": [
+        // 加载 ROS 2 系统环境（替换为你的 ROS 2 版本，如 humble、foxy）
+        { "name": "ROS_DISTRO", "value": "humble" },
+        // 加载工作空间环境（确保与实际 install 路径一致）
+        { 
+          "name": "CMAKE_PREFIX_PATH", 
+          "value": "${workspaceFolder}/ros/topic_ws/install:${env:CMAKE_PREFIX_PATH}" 
+        },
+        // 动态链接库路径（解决类型支持库找不到的问题）
+        { 
+          "name": "LD_LIBRARY_PATH", 
+          "value": "${workspaceFolder}/ros/topic_ws/install/service_cpp/lib:${workspaceFolder}/ros/topic_ws/install/custom_srv_interfaces/lib:${env:LD_LIBRARY_PATH}" 
+        },
+        // ROS 域 ID（默认 0，与你的网络配置一致）
+        { "name": "ROS_DOMAIN_ID", "value": "0" }
+      ],
+      "externalConsole": false,  // 是否使用外部终端（建议 false，在 VS Code 内部输出）
+      "MIMode": "gdb",           // 调试器（Linux 用 gdb）
+      "setupCommands": [
+        {  // 美化 gdb 输出
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      // 可选：启动前自动构建（确保代码最新）
+    //   "preLaunchTask": "colcon build service_cpp",
+      "miDebuggerPath": "/usr/bin/gdb"  // gdb 路径（默认即可）
+    }
+  ]
+}
